@@ -1,0 +1,423 @@
+@font-face {
+    font-family: roya;
+    src: url(fonts/RoyaR.woff) format(woff);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: royab;
+    src: url(fonts/RoyaB.woff) format(woff);
+    font-weight: bold;
+    font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+}
+body{
+    direction: rtl;
+    font-family: roya;
+}
+input ,select ,textarea{
+    font-style: inherit;
+    font-size: inherit;
+}
+.clear{
+    clear: both;
+}
+.wrapper{
+    margin: 0 auto;
+    max-width: 1140px;
+    overflow: hidden;
+}
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
+#menu{
+    background-color: black;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+}
+#nav li{
+    box-sizing: border-box;
+    width: 18%;
+    padding: 10px 10px;
+    display: inline-block;
+    text-align: center;
+}
+#nav li:hover{
+    background-color: maroon;
+}
+#nav li a{
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+#header{
+    background-color:#5ad;
+}
+#search{
+    color: white;
+    margin: 0 auto;
+}
+#search h1{
+    margin-top: 50px;
+    font-weight: bold;
+    display: inline-block;
+    width: 100%;
+    font-size: 50px;
+    text-align: center;
+}
+#search input[type=submit]{
+    border-radius: 5px;
+    background-image:linear-gradient(#27a , #059);
+    width: 80px;
+    padding: 4px 0;
+    color: white;
+    font-family: roya;
+    font-style: bold;
+    vertical-align: middle;
+    margin-bottom: 20px;
+}
+#search input[type=submit]:hover{
+    background-image: linear-gradient(#059 , #037);
+}
+#search input[type=text]{
+    width: 380px;
+    padding: 5px;
+    vertical-align: middle;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+#search label{
+    font-size: 27px;
+}
+#search form{
+    text-align: center;
+}
+#login{
+    color: white;
+    font-size: 16px;
+    overflow: auto;
+}
+#login fieldset{
+    margin: 15px auto;
+    border: 1px solid white;
+    padding: 10px;
+    margin-bottom: 10px;
+    max-width: 300px;
+}
+#login input[type=text],#login input[type=password]{
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid black;
+    padding: 7px;
+}
+#login input{
+    margin: 5px;
+    direction: ltr;
+    vertical-align: middle;
+}
+#login legend{
+    padding: 5px;
+    margin-right: 10px;
+}
+#login label{
+    width: 100px;
+    display: inline-block;
+    font-weight: bold;
+}
+#login .button{
+    border-radius: 4px;
+    background-image:linear-gradient(#27a , #059);
+    width: 70px;
+    cursor: pointer;
+    padding: 4px 0;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    font-family: roya;
+    font-weight: bold;
+}
+#login input[type=submit]{
+    margin-right: 75px;
+}
+#login a{
+    display: inline-block;
+}
+#login .button:hover{
+    background-image:linear-gradient(#059 , #037);
+}
+#sidebar{
+    width: 30%;
+    margin: 0 5%;
+    margin-top: 10px;
+}
+#sidebar h1{
+    font-size: 24px;
+    background-color: #47a;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid rgb(252, 226, 226);
+}
+#main{
+    background-color:#f7f7f7;
+}
+.menu{
+    border: 1px solid white;
+}
+.item,.subitem{
+    line-height: 200%;
+    border-bottom: 1px solid rgb(252, 226, 226);
+    position: relative;
+    background-color: rgb(41, 41, 56);
+}
+.item:nth-child(2n),.subitem:nth-child(2n){
+    background-color: rgb(4, 4, 71);
+}
+.menu a{
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+.item:last-child,.subitem:last-child{
+    border: none;
+}
+.submenu{
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background-color: rgb(4, 4, 71);
+    z-index: 10;
+    border: 1px solid white;
+    position: absolute;
+    top: -1px;
+    right: 100%;
+}
+.item:hover,.subitem:hover{
+    background-color: rgb(65, 65, 145);
+}
+.item:hover>.submenu,.subitem:hover>.submenu{
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}   
+#content{
+    margin: 20px auto;
+}
+#content h2{
+    border-bottom: 3px dotted #bbb;
+    margin: 0 5%;
+    color: #555;
+    font-size: 24px;
+}
+.post{
+    margin: 10px auto;
+    height: 310px;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    max-width: 260px;
+}
+.post img{
+    width: 100%;
+    display: block;
+}
+.post p{
+    position: absolute;
+    top: -150px;
+    height: 130px;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    text-align: justify;
+}
+.post:hover p{
+    top: 0;
+    transition: 0.7s;
+}
+.post img{
+    display: block;
+}
+.post a{
+    color: #555;
+    text-decoration: none;
+}
+.post h3{
+    font-size: 20px;
+    font-weight: normal;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    height: 85px;
+}
+.postlable{
+    border: 2px solid #ddd;
+    border-radius: 20px;
+    color: green;
+    background-color: #f7f7f7;
+    font-size: 18px;
+    padding: 2px;
+    width: 90px;
+    margin: 8px;
+    text-align: center;
+}
+.post:hover{
+    box-shadow: 0 0 5px -1px;
+}
+#map h1{
+    color: white;
+    border-bottom: 2px solid white;
+    font-size: 24px;
+}
+#map{
+    margin: 10px auto;
+    width: 50%;
+}
+#map a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    color: #bbb;
+    border-bottom: 1px dotted #777;
+    padding: 2px 10px;
+    width: 150px;
+}
+#map a:hover{
+    color: white;
+    border-bottom: 1px solid white;
+}
+#email{
+    margin: 10px auto;
+    width: 50%;
+}
+#email h1{
+    color: white;
+    border-bottom: 2px solid white;
+    font-size: 24px;
+}
+#email label{
+    display: inline-block;
+    color: #bbb;
+    text-align: center;
+    margin-top: 3px;
+    margin-bottom: 6px;
+}
+#email form{
+    text-align: center;
+}
+#email input[type=email]{
+    padding: 8px;
+    width: 230px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding:10px;
+}
+#email input[type=submit]{
+    padding: 2px;
+    border-radius: 3px;
+    background-image: linear-gradient(#113 , #446);
+    border: 1px solid #999;
+    width: 100px;
+    color: #bbb;
+    cursor: pointer;
+    font-family: roya;
+}
+#email input[type=submit]:hover{
+    color: white;
+    background-image: linear-gradient(#224 , #557);
+    ;
+}
+#copyright{
+    background-color: black;
+    text-align: center;
+    color: #bbb;
+    font-size: 18px;
+    border-top: 2px solid green;
+    padding: 10px;
+}
+#copyright b{
+    color: white;
+}
+#footer{
+    background-color: #002;
+    border-top: 4px solid orange;
+}
+@media screen and (min-width: 720px){
+    #map{
+        float: right;
+        width: 40%;
+        margin: 10px 2%;
+        max-width: 400px;
+    }
+    #email{
+        float: left;
+        width: 40%;
+        margin: 10px 2%;
+        max-width: 300px;
+    }
+}
+@media screen and (min-width: 960px){
+    .post{
+        margin: 10px auto;
+        min-width: 260px;
+        margin: 10px;
+    }
+    #nav li{
+        max-width: 150px;
+        font-size: 18px;
+    }
+    #map{
+        width: 20%;
+        margin: 10px 10%;
+    }
+    #email{
+        width: 20%;
+        margin: 10px 10%;
+    }
+    #sidebar{
+        float: right;
+        width: 30%;
+        margin: 20px 2% 0 1%;
+    }
+    #content{
+        float: left;
+        width: 60%;
+        margin: 10px 3%;
+    }
+    #header #search{
+        float: right;
+        width: 40%;
+    }
+    #login{
+        float: left;
+        margin-top: 50px;
+        width: 40%;
+    }
+}
+@media screen and (min-width: 1140px){
+    #sidebar{
+        float: right;
+        width: 20%;
+        margin: 20px 2% 0 1%;
+    }
+    #content{
+        float: left;
+        width: 70%;
+        margin: 10px 3%;
+    }
+}
